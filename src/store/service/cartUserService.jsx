@@ -1,12 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const getToken = () => localStorage.getItem("user-token");
-const url_server = import.meta.env.VITE_URL_SERVER;
 
 const cartService = createApi({
   reducerPath: "cart",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${url_server}/api/cart/`,
+    baseUrl: "http://localhost:8000/api/cart/",
     prepareHeaders: (headers) => {
       const token = getToken();
       if (token) {

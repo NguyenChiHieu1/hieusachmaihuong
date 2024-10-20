@@ -81,6 +81,10 @@ const PageCart = () => {
       );
       return;
     }
+    if (cartSelectPayment.length <= 0) {
+      toast.error("Vui lòng chọn sản phẩm trong giỏ trước để thanh toán!!!");
+      return;
+    }
     switch (paymentMethod) {
       case "COD":
         // console.log(paymentMethod);

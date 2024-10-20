@@ -82,7 +82,7 @@ const PageDetailInfoProduct = ({ product, onClose }) => {
         discount: product?.coupons?.discount,
       })
     );
-    toast.success("Add cart success");
+    toast.success("Thêm sản phẩm vào giỏ thành công !!!");
     // Nhập đưa đơn hàng vào giỏ
   };
 

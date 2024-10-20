@@ -2,13 +2,11 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Lấy token từ localStorage hoặc từ redux store
 const getToken = (type) => localStorage.getItem(type);
-const url_server = import.meta.env.VITE_URL_SERVER;
-console.log(url_server);
 
 const productService = createApi({
   reducerPath: "product",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${url_server}/api/product/`,
+    baseUrl: "http://localhost:8000/api/product/", // Thay đổi baseUrl theo API của bạn
     prepareHeaders: (headers) => {
       const token = getToken("admin-token") || getToken("user-token");
       if (token) {

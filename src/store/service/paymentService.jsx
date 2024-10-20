@@ -1,12 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const getToken = (type) => localStorage.getItem(type);
-const url_server = import.meta.env.VITE_URL_SERVER;
-
 const paymentService = createApi({
   reducerPath: "payment",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${url_server}/api/payment`,
+    baseUrl: "http://localhost:8000/api/payment",
     prepareHeaders: (headers) => {
       const token = getToken("user-token");
       if (token) {

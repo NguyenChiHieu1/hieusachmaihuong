@@ -33,9 +33,10 @@ const AdminLogin = () => {
 
   useEffect(() => {
     if (isError && error?.data?.errors) {
-      error.data.errors.forEach((err) => {
-        toast.error(err.msg);
-      });
+      // error.data.errors.forEach((err) => {
+      // toast.error(err.msg);
+      toast.error("Đăng nhập thất bại!!!");
+      // });
     } else if (isError) {
       toast.error("Đăng nhập thất bại!!!");
     }

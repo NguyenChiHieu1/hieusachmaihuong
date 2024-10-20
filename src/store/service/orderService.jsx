@@ -2,13 +2,12 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Function to get token from localStorage
 const getToken = (type) => localStorage.getItem(type);
-const url_server = import.meta.env.VITE_URL_SERVER;
 
 // Define API slice
 const orderService = createApi({
   reducerPath: "orderService",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${url_server}/api/order/`, // Adjust base URL according to your backend
+    baseUrl: "http://localhost:8000/api/order/", // Adjust base URL according to your backend
     prepareHeaders: (headers) => {
       // Determine token type based on the endpoint
       const token = getToken("admin-token") || getToken("user-token");

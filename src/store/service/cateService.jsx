@@ -1,12 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const getToken = (type) => localStorage.getItem(type);
-const url_server = import.meta.env.VITE_URL_SERVER;
 
 const cateService = createApi({
   reducerPath: "category",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${url_server}/api/category`,
+    baseUrl: "http://localhost:8000/api/category",
     prepareHeaders: (headers) => {
       const token = getToken("admin-token") || getToken("user-token");
       if (token) {
